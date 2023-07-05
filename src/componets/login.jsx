@@ -3,10 +3,10 @@ import { Input, Ripple, initTE } from "tw-elements";
 export default function login() {
     initTE({ Input, Ripple });
     return (
-        <section className="h-full">
+        <section className="p-5">
             <div className="">
                 {/* <!-- Left column container with background--> */}
-                <div className="flex flex-wrap items-center justify-center h-full g-6 lg:justify-between">
+                <div className="">
                     {/* <!-- Right column container --> */}
                     <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
                         <form>
