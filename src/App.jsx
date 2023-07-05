@@ -1,10 +1,13 @@
 import "./App.css";
+import Home from "./Pages/home";
+import Navbar from "./Pages/navbar";
 
 function App() {
     return (
-        <div className="flex justify-center items-center text-white bg-black/75 h-screen">
-            <h1 className="text-5xl font-serif font-semibold">Velovista</h1>
-        </div>
+        <main className="h-screen body-font">
+            <Navbar />
+            <Home />
+        </main>
     );
 }
 
