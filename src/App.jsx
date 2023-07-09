@@ -1,13 +1,14 @@
 import "./App.css";
 import Home from "./Pages/home";
-import Nav2 from "./Pages/nav2";
+import Nav from "./Pages/navbar";
 import Chat from "./Pages/chat";
 function App() {
     return (
         <main className="h-screen body-font">
-            <Nav2 />
-            {/* <Home /> */}
-            <Chat />
+        <div className="z-100"></div>
+            <Nav />
+            <Home />
+            {/* <Chat /> */}
         </main>
     );
 }
