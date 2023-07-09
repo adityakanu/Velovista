@@ -6,7 +6,6 @@ import Nav from "./Pages/navbar";
 function App() {
     return (
         <main className="h-screen body-font">
-            <Nav />
             <Home />
             {/* <Map />
             <Chat /> */}

@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+body {
+    font-family: "Outfit", sans-serif;
+    background-color: #c8ffe4;
+    max-height: 100vh;
+    margin-top: 80px;
+}
+
+.InterCity {
+    width: 100vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.button {
+    position: relative;
+}
+.pick {
+    position: relative;
+
+    left: 15vw;
+
+    width: fit-content;
+    z-index: 10;
+}
+.pick:hover {
+    scale: 1.05;
+}
+
+.PickDropText {
+    position: relative;
+    color: white;
+    top: -10vh;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    left: 9vw;
+}
+
+.explore {
+    position: relative;
+
+    scale: 0.4;
+    width: fit-content;
+    left: 8vw;
+    /* top: 3=15vh; */
+}
+
+.explore:hover {
+    scale: 0.42;
+}
+
+.ExploreText a {
+    position: relative;
+    color: white;
+    top: -26vh;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 4rem;
+    font-weight: 500;
+    left: 29vw;
+    max-width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.ExploreText a:hover {
+    color: #c8ffe4;
+}
+.PickDropText a:hover {
+    color: #c8ffe4;
+}
+
+/* nav */
+.navbar {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    background-color: #34ffaa;
+    justify-self: flex-start;
+    /* justify-content: space-around;  */
+    width: 100%;
+    justify-content: space-between;
+    position: sticky;
+    z-index: 1000;
+}
+
+.navb {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 5vh;
+}
+.logo {
+    padding-left: 1vw;
+}
+
+.Options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    position: relative;
+    left: 1.5vw;
+}
+
+.logout {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: white;
+    position: relative;
+    list-style: none;
+    left: 55vw;
+    top: -0.9vh;
+}
+
+.Co,
+.Sa,
+.He {
+    position: relative;
+    padding-left: 2vw;
+    top: -0.5vh;
+}
+
+.button {
+    position: relative;
+    left: 50vw;
+}
