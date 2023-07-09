@@ -1,27 +1,44 @@
-import "./chat.css";
+import React, { useState } from "react";
+import Driver from "../assets/driver.png";
 import Send from "../assets/send.png";
-import Man from "../assets/unsplash_jmURdhtm7Ng.png";
-export default function Chat(){
+import "./chat.css";
+
+export default function Chat() {
+    const [message, setMessage] = useState("");
+
+    const handleButtonClick = () => {
+        setMessage("I am on my way. Will be there soon!\n Thank you!");
+    };
+
     return (
-        <div  className="Chat">
+        <div className="Chat">
             <span className="chatwith">Chat with your driver</span>
             <div className="msgbox">
-            <div className="message">
-                <input type="text" className="type"></input>
-                <button className="sendbutton" type="button"><img src={Send}/></button>
-            </div>
+                <div className="message">
+                    <input
+                        type="text"
+                        className="type"
+                        // value={message}
+                        // onChange={(e) => setMessage(e.target.value)}
+                    />
+                    <button
+                        className="sendbutton"
+                        type="button"
+                        onClick={handleButtonClick}
+                    >
+                        <img src={Send} alt="Send" />
+                    </button>
+                </div>
+                <div className="px-10 mt-auto mb-4 text-2xl font-bold text-black rounded-md border-amber-500 font-poppins ">
+                    {message}
+                </div>
             </div>
 
             <div className="groupChild">
-            <div className="obamaHabibi">Obama Habibi</div>
-            <div className="driveExp450km">Drive exp: 450km</div>
-            <img
-          className="unsplashjmurdhtm7ngIcon1"
-          alt=""
-          src={Man}
-        />
+                <div className="obamaHabibi">Obama Habibi</div>
+                <div className="driveExp450km">Drive exp: 450km</div>
+                <img className="driver" alt="Driver" src={Driver} />
             </div>
-
         </div>
-    )
+    );
 }

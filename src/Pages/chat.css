@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 .chatwith {
     position: relative;
     font-family: "Montserrat", sans-serif;
@@ -19,14 +20,15 @@
     top: 2vw;
 }
 
-.message{
+.message {
     position: relative;
-    top:62vh
+    top: 62vh
 }
+
 .type {
     position: relative;
     font-family: "Montserrat", sans-serif;
-    background-color: #a0d1b9;
+    background-color: #34ffaa;
     border-radius: 5px;
     left: 35%;
     top: 88%;
@@ -34,10 +36,10 @@
     padding: 10px 5% 10px 10px;
 }
 
-.sendbutton{
-position: relative;
-right: -23.5vw;
-top:0.8vh;
+.sendbutton {
+    position: relative;
+    right: -23.5vw;
+    top: 0.8vh;
 }
 
 .groupChild {
@@ -64,10 +66,12 @@ top:0.8vh;
     left: 3rem;
     font-weight: 500;
 }
+
 .driveExp450km {
     top: 4rem;
     font-size: 1.19rem;
 }
+
 .groupItem {
     position: absolute;
     top: 0;
@@ -79,7 +83,7 @@ top:0.8vh;
 }
 
 
-.unsplashjmurdhtm7ngIcon1 {
+.driver {
     position: absolute;
     top: -1rem;
     left: calc(50% + 67px);
@@ -89,14 +93,14 @@ top:0.8vh;
     object-fit: cover;
     background-color: #c8ffe4;
     padding: 15px;
-  }
+}
 
-  .user{
+.user {
     position: relative;
     scale: 0.5;
     top: -7vh;
-  }
+}
 
-  .Options{
+.Options {
     font-family: "Montserrat", sans-serif;
-  }
+}

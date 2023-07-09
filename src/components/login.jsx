@@ -3,6 +3,7 @@ import {
     signInWithPopup,
 } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Input, Ripple, initTE } from "tw-elements";
 import { auth, githubProvider, googleProvider } from "./config";
 import "./login.css";
@@ -10,12 +11,14 @@ import "./login.css";
 export default function login() {
     initTE({ Input, Ripple });
     const [value, setValue] = useState("");
+
     const handleGoogle = () => {
         signInWithPopup(auth, googleProvider).then((data) => {
             setValue(data.user.email);
             localStorage.setItem("email", data.user.email);
         });
     };
+
     const handleGithub = () => {
         signInWithPopup(auth, githubProvider).then((data) => {
             setValue(data.user.email);
@@ -32,7 +35,6 @@ export default function login() {
                 // Signed in
                 // ...
                 console.log("user signed in");
-                location.href = "/";
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -164,7 +166,7 @@ export default function login() {
                     </div>
 
                     {/* <!--Forgot password link--> */}
-                    <a href="#!">Forgot password?</a>
+                    <Link to={"#"}>Forgot password?</Link>
                 </div>
 
                 {/* <!-- Login button --> */}
@@ -176,18 +178,18 @@ export default function login() {
                         data-te-ripple-init
                         data-te-ripple-color="light"
                     >
-                        Signup
+                        Login
                     </button>
 
                     {/* <!-- Register link --> */}
                     <p className="pt-1 mt-2 mb-0 text-sm font-semibold">
-                        Already have an account?{" "}
-                        <a
-                            href="/login"
+                        Don&apos;t have an account?{" "}
+                        <Link
+                            to="/signup"
                             className="transition duration-150 ease-in-out text-danger hover:text-danger-600 focus:text-danger-600 active:text-danger-700"
                         >
-                            Login
-                        </a>
+                            Register
+                        </Link>
                     </p>
                 </div>
             </form>
