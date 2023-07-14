@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import img1 from "../image/logo.svg";
+import { useState } from "react";
+import img1 from "../assets/logo.svg";
 import Button from "./Button";
 const Nav = () => {
     let Links = [
@@ -12,7 +12,7 @@ const Nav = () => {
     let [open, setOpen] = useState(false);
     return (
         <div className="top-0 left-0 w-full shadow-md">
-            <div className="items-center justify-between py-4 bg-green-400 md:flex md:px-10 px-7">
+            <div className="items-center justify-between py-4 bg-mint md:flex md:px-10 px-7">
                 <div
                     className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
       text-gray-800"
@@ -30,7 +30,7 @@ const Nav = () => {
                 </div>
 
                 <ul
-                    className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static border-b-1 border-white bg-green-400 md:z-auto z-[1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+                    className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static border-b-1 border-white md:z-auto z-[1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
                         open ? "top-20 " : "top-[-490px]"
                     }`}
                 >
