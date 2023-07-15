@@ -3,6 +3,7 @@ import {
     signInWithPopup,
 } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Input, Ripple, initTE } from "tw-elements";
 import Navbar from "../Pages/navbar";
 import { auth, githubProvider, googleProvider } from "./config";
@@ -11,16 +12,19 @@ import "./login.css";
 export default function login() {
     initTE({ Input, Ripple });
     const [value, setValue] = useState("");
+    const navigate = useNavigate();
     const handleGoogle = () => {
         signInWithPopup(auth, googleProvider).then((data) => {
             setValue(data.user.email);
             localStorage.setItem("email", data.user.email);
+            navigate("/profile");
         });
     };
     const handleGithub = () => {
         signInWithPopup(auth, githubProvider).then((data) => {
             setValue(data.user.email);
             localStorage.setItem("email", data.user.email);
+            navigate("/profile");
         });
     };
 
@@ -33,7 +37,7 @@ export default function login() {
                 // Signed in
                 // ...
                 console.log("user signed in");
-                location.href = "/";
+                navigate("/profile");
             })
             .catch((error) => {
                 const errorCode = error.code;

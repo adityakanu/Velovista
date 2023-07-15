@@ -2,6 +2,7 @@ import { useState } from "react";
 import Driver from "../assets/driver.png";
 import Send from "../assets/send.png";
 import "./chat.css";
+import Map from "./map";
 
 export default function Chat() {
     const [message, setMessage] = useState("");
@@ -39,6 +40,7 @@ export default function Chat() {
                 <div className="driveExp450km">Drive exp: 450km</div>
                 <img className="driver" alt="Driver" src={Driver} />
             </div>
+            <Map />
         </div>
     );
 }

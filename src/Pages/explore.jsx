@@ -59,7 +59,7 @@ const Explore = () => {
             <h1 className="pt-5 pb-5 text-5xl font-bold text-center text-white tracking-2">
                 Exploration Package
             </h1>
-            <div className="flex items-center justify-center h-screen bg-green-300">
+            <div className="flex items-center justify-center">
                 <div className="p-8 bg-white shadow-md code-container rounded-3xl">
                     <input
                         type="text"

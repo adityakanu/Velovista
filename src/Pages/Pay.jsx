@@ -1,5 +1,6 @@
-const fare = Math.floor(Math.random() * 1000) + 1;
+import { useNavigate } from "react-router-dom";
 
+const fare = Math.floor(Math.random() * 1000) + 1;
 const loadScript = (src) => {
     return new Promise((resolve) => {
         const script = document.createElement("script");
@@ -23,7 +24,7 @@ const displayRazorpay = async (amount) => {
         alert("Razorpay SDK failed to load. Are you online?");
         return;
     }
-
+    const navigate = useNavigate();
     const options = {
         key: "rzp_test_CiUCBMPSUIQMnJ",
         currency: "INR",
@@ -33,10 +34,11 @@ const displayRazorpay = async (amount) => {
         handler: function (response) {
             alert(response.razorpay_payment_id);
             alert("Ride Booked Successfully");
-            alert("OTP" + Math.floor(Math.random() * 10000) + 1);
+            alert("OTP " + Math.floor(Math.random() * 10000) + 1);
+            navigate("/chat");
         },
         prefill: {
-            name: "test Kumar",
+            name: "Gangadhar Kumar",
         },
     };
 
