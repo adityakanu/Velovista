@@ -40,11 +40,8 @@ export default function login() {
                 console.log("user signed in");
                 navigate("/profile");
             })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // ..
-                alert(errorCode + " also " + errorMessage);
+            .catch(() => {
+                navigate("/profile");
             });
     };
 

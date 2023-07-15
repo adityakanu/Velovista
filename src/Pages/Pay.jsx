@@ -34,7 +34,10 @@ const displayRazorpay = async (amount) => {
             alert(response.razorpay_payment_id);
             alert("Ride Booked Successfully");
             alert("OTP " + Math.floor(Math.random() * 10000) + 1);
-            navigate("/chat");
+            useEffect(() => {
+                const navigate = useNavigate();
+                navigate("/chat");
+            });
         },
         prefill: {
             name: "Gangadhar Kumar",
@@ -68,7 +71,6 @@ const Box = () => {
 };
 
 const BoxContainer = () => {
-    const navigate = useNavigate();
     const smallScreenBoxes = [];
 
     for (let i = 0; i < 5; i++) {

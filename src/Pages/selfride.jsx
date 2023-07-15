@@ -9,6 +9,7 @@ const Self = () => {
     const [numberOfLuggages, setNumberOfLuggages] = useState("");
     const [numberOfFoodBreaks, setNumberOfFoodBreaks] = useState("");
     const [intermediatelocation, setVia] = useState("");
+
     const [showPopup, setShowPopup] = useState(false);
 
     const handlePickupLocationChange = (event) => {
@@ -21,13 +22,16 @@ const Self = () => {
     const handleViaChange = (event) => {
         setVia(event.target.value);
     };
-
     const handleNumberOfPeopleChange = (event) => {
         setNumberOfPeople(event.target.value);
     };
 
     const handleNumberOfLuggagesChange = (event) => {
         setNumberOfLuggages(event.target.value);
+    };
+
+    const handleNumberOfFoodBreaksChange = (event) => {
+        setNumberOfFoodBreaks(event.target.value);
     };
 
     const handleStartJourney = () => {
@@ -50,15 +54,15 @@ const Self = () => {
             setNumberOfPeople("");
             setNumberOfLuggages("");
             setNumberOfFoodBreaks("");
-            setVia("");
+
             setShowPopup(true);
         }
     };
 
     return (
         <>
-            <h1 className="pt-5 pb-5 text-5xl font-bold text-center text-white tracking-2">
-                Book Ride for Yourself
+            <h1 className="pt-10 pb-5 text-5xl font-bold text-center text-white text-gray-800 tracking-2">
+                Book A Ride For Yourself
             </h1>
             <div className="flex items-center justify-center">
                 <div className="p-8 bg-white shadow-md code-container rounded-3xl">
@@ -98,7 +102,13 @@ const Self = () => {
                         onChange={handleNumberOfLuggagesChange}
                         className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md"
                     />
-
+                    <input
+                        type="number"
+                        placeholder="Number of Food Breaks"
+                        value={numberOfFoodBreaks}
+                        onChange={handleNumberOfFoodBreaksChange}
+                        className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md"
+                    />
                     <button
                         onClick={handleStartJourney}
                         className="w-full px-4 py-2 bg-orange-500 text-white border-none rounded-md cursor-pointer transition duration-300 ease-in-out transform hover:bg-orange-600 hover:translate-y-[-2px] hover:shadow-md"
