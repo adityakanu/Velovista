@@ -4,6 +4,7 @@ import Conatct from "./Pages/Contact";
 import Inter from "./Pages/InterCity";
 import Minor from "./Pages/Minor";
 import Nav from "./Pages/Nav";
+import Pay from "./Pages/Pay.jsx";
 import Select from "./Pages/Select";
 import Buffer from "./Pages/buffer.jsx";
 import Chat from "./Pages/chat.jsx";
@@ -16,7 +17,6 @@ import Pick from "./Pages/pickndrop";
 import Self from "./Pages/selfride";
 import ProfileCard from "./components/profileCard.jsx";
 import Signup from "./components/signup.jsx";
-
 export default function App() {
     return (
         <main>
@@ -47,6 +47,18 @@ export default function App() {
                                     <Nav />
                                     <div className="items-center justify-center pl-auto pr-auto"></div>
                                     <Select />
+                                </div>
+                            </section>
+                        }
+                    />
+                    <Route
+                        path="/pay"
+                        element={
+                            <section className="h-screen ">
+                                <div className="h-full back">
+                                    <Nav />
+                                    <div className="items-center justify-center pl-auto pr-auto"></div>
+                                    <Pay />
                                 </div>
                             </section>
                         }
