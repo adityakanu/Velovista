@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Driver from "../assets/driver.png";
 import Send from "../assets/send.png";
 import "./chat.css";

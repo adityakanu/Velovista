@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import Navbar from "../Pages/navbar";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../Pages/Nav";
 import profilePhoto from "../assets/profile.svg";
 import "./profile.css";
 const ProfileCard = () => {
@@ -8,6 +9,7 @@ const ProfileCard = () => {
     const [gender, setGender] = useState("");
     const [negotiationsEnabled, setNegotiationsEnabled] = useState(false);
 
+    const navigate = useNavigate();
     const handleProfileSubmit = (e) => {
         e.preventDefault();
         // Perform profile submission logic here
@@ -25,7 +27,7 @@ const ProfileCard = () => {
                     <div className="px-6 bg-transparent rounded-lg shadow-md">
                         <form onSubmit={handleProfileSubmit}>
                             <img
-                                class="w-40 h-40 relative -top-20 mx-auto rounded-full shadow-lg"
+                                className="relative w-40 h-40 mx-auto rounded-full shadow-lg -top-20"
                                 src={profilePhoto}
                                 alt="Dummy Pic"
                             />
@@ -112,6 +114,7 @@ const ProfileCard = () => {
                             <div className="mt-6">
                                 <button
                                     type="submit"
+                                    onClick={navigate("/book")}
                                     className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
                                 >
                                     Create Profile

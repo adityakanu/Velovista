@@ -1,68 +1,40 @@
-import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import MarkerClusterGroup from "react-leaflet-cluster";
-// import locationIconGif from "../assets/location.png";
+import Driver from "../assets/driver.png";
+import Navbar from "./Nav";
 import "./map.css";
-import Navbar from "./navbar";
 
-// create custom icon
-const locationIcon = L.icon({
-    iconUrl: "../assets/location.png",
-    iconSize: [38, 38],
-});
-
-// custom cluster icon
-function createClusterCustomIcon(cluster) {
-    return L.divIcon({
-        html: `<span class="cluster-icon">${cluster.getChildCount()}</span>`,
-        className: "custom-marker-cluster",
-        iconSize: L.point(33, 33, true),
-    });
-}
-
-// markers
-const markers = [
-    {
-        geocode: [48.86, 2.3522],
-        popUp: "Your location",
-    },
-    {
-        geocode: [48.85, 2.3522],
-        popUp: "Driver's location",
-    },
-];
+const position1 = [28.37, 76.99];
+const position2 = [28.39, 77.0];
 
 export default function Map() {
     return (
         <div>
             <Navbar />
             <div className="px-5 py-0 m-0">
-                <MapContainer center={[48.8566, 2.3522]} zoom={13}>
+                <MapContainer
+                    center={position1}
+                    zoom={13}
+                    scrollWheelZoom={false}
+                >
                     {/* OPEN STREET MAP TILES */}
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
-
-                    {/* MARKER CLUSTER GROUP */}
-                    <MarkerClusterGroup
-                        chunkedLoading
-                        iconCreateFunction={createClusterCustomIcon}
-                    >
-                        {/* Map through the markers */}
-                        {markers.map((markers) => (
-                            <Marker
-                                position={markers.geocode}
-                                icon={locationIcon}
-                                key={`${markers.geocode[0]}-${markers.geocode[1]}`}
-                                className="text-2xl font-bold text-violet-600"
-                            >
-                                <Popup>{markers.popUp}</Popup>
-                            </Marker>
-                        ))}
-                    </MarkerClusterGroup>
+                    <Marker position={position1}>
+                        <Popup>You are here.</Popup>
+                    </Marker>
+                    <Marker position={position2}>
+                        <Popup>Obama is coming for you.</Popup>
+                    </Marker>
                 </MapContainer>
+
+                <img
+                    className="absolute z-20 w-32 h-32 bottom-10 right-20"
+                    alt="Driver"
+                    src={Driver}
+                />
             </div>
         </div>
     );

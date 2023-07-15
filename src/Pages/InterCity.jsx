@@ -1,10 +1,13 @@
+import img2 from "../assets/Group.png";
+import img1 from "../assets/explore.png";
+
 import { Link } from "react-router-dom";
 
-const Select = () => {
+const Inter = () => {
     return (
         <div className="z-[0]">
             <h1 className="pt-20 pb-10 text-5xl font-bold text-center text-white tracking-2">
-                Where do you want to travel
+                Select Your Plan
             </h1>
             <div className="flex items-center justify-center pt-7 ">
                 <div className="grid grid-cols-2 gap-10 pd-auto md:grid-cols-2 lg:grid-cols-2">
@@ -12,24 +15,24 @@ const Select = () => {
                         <div className="h-96 w-72 ">
                             <img
                                 className="h-full w-full object-cover transition-transform duration-500 rounded-lg z-[-1] group-hover:rotate-3 group-hover:scale-125"
-                                src="https://www.centreforcities.org/wp-content/uploads/2019/05/Tram_Nottingham_x1650-1630x684.jpg"
+                                src={img2}
                                 alt=""
                             />
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
                         <div className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
                             <h1 className="text-3xl font-bold text-white font-dmserif">
-                                Intra-City
+                                Pick n Drop
                             </h1>
                             <p className="mb-3 text-lg italic text-white transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-                                Please arrange a splendid journey to reach our
-                                desired destination within the enchanting
-                                confines of our beloved city.
+                                Book a ride in the most simple way. We will make
+                                sure that you have a comfortable and safe
+                                journe.
                             </p>
 
-                            <Link to="/intrabook">
+                            <Link to="/pickndrop">
                                 <button className="px-2 py-2 text-sm text-white capitalize bg-green-500 rounded-full shadow font-com shadow-black/60">
-                                    Book a Ride{" "}
+                                    Proceed to Booking{" "}
                                 </button>
                             </Link>
                         </div>
@@ -39,23 +42,23 @@ const Select = () => {
                         <div className="h-96 w-72">
                             <img
                                 className="h-full w-full object-cover transition-transform duration-500 z-[-1] rounded-lg group-hover:rotate-3 group-hover:scale-125"
-                                src="https://images.unsplash.com/photo-1502675135487-e971002a6adb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
+                                src={img1}
                                 alt=""
                             />
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
                         <div className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
                             <h1 className="text-3xl font-bold text-white font-dmserif">
-                                Inter-City
+                                Exploration
                             </h1>
                             <p className="mb-3 text-lg italic text-white transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-                                Effortlessly reach our desired city. We will
-                                make sure that you have a comfortable and safe
-                                journey.
+                                Explore the city with us. We will make sure that
+                                you have a comfortable and safe journey.
                             </p>
-                            <Link to="/intercity">
+                            <Link to="/explore">
+                                {" "}
                                 <button className="px-2 py-2 text-sm text-white capitalize bg-green-500 rounded-full shadow font-com shadow-black/60">
-                                    Book a Ride
+                                    Proceed to Booking
                                 </button>
                             </Link>
                         </div>
@@ -66,4 +69,4 @@ const Select = () => {
     );
 };
 
-export default Select;
+export default Inter;

@@ -12,11 +12,8 @@ const Nav = () => {
     let [open, setOpen] = useState(false);
     return (
         <div className="top-0 left-0 w-full shadow-md">
-            <div className="items-center justify-between py-4 bg-mint md:flex md:px-10 px-7">
-                <div
-                    className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
-      text-gray-800"
-                >
+            <div className="items-center justify-between py-4 md:flex bg-mint md:px-10 px-7">
+                <div className="font-bold text-xl cursor-pointer flex items-center font-[Poppins] text-gray-800">
                     <span className="pt-2 mr-1 text-3xl text-white">
                         <img src={img1} className="z-[2]" alt="logo"></img>
                     </span>
