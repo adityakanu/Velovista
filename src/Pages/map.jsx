@@ -10,6 +10,7 @@ const position2 = [28.39, 77.0];
 export default function Map() {
     return (
         <div>
+            <Navbar />
             <div className="px-5 py-0 m-0">
                 <MapContainer
                     center={position1}

@@ -24,7 +24,6 @@ const displayRazorpay = async (amount) => {
         alert("Razorpay SDK failed to load. Are you online?");
         return;
     }
-    const navigate = useNavigate();
     const options = {
         key: "rzp_test_CiUCBMPSUIQMnJ",
         currency: "INR",
@@ -69,6 +68,7 @@ const Box = () => {
 };
 
 const BoxContainer = () => {
+    const navigate = useNavigate();
     const smallScreenBoxes = [];
 
     for (let i = 0; i < 5; i++) {
@@ -86,7 +86,9 @@ const BoxContainer = () => {
             </h1>
             <div className="flex items-center justify-center ">
                 <button
-                    onClick={() => displayRazorpay(fare)}
+                    onClick={() => {
+                        displayRazorpay(fare);
+                    }}
                     className="px-4 py-2 mt-auto font-bold text-white rounded-full bg-mint hover:bg-red-500"
                 >
                     Book

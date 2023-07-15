@@ -1,14 +1,17 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Driver from "../assets/driver.png";
 import Send from "../assets/send.png";
 import "./chat.css";
-import Map from "./map";
 
 export default function Chat() {
     const [message, setMessage] = useState("");
-
-    const handleButtonClick = () => {
+    const navigate = useNavigate();
+    const handleButtonClick = async () => {
         setMessage("I am on my way. Will be there soon!\n Thank you!");
+        setTimeout(() => {
+            navigate("/map");
+        }, 5000);
     };
 
     return (
@@ -40,7 +43,6 @@ export default function Chat() {
                 <div className="driveExp450km">Drive exp: 450km</div>
                 <img className="driver" alt="Driver" src={Driver} />
             </div>
-            <Map />
         </div>
     );
 }
